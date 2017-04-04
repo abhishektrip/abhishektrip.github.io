@@ -77,26 +77,25 @@
 						console.log( Math.round(percentComplete, 2) + '% downloaded' );
 					}
 				};
-				var onError = function ( xhr ) { console.log(xhr);};
+				var onError = function ( xhr ) { };
 																
 				var loader = new THREE.ImageLoader( manager );
 				loader.load( 'Objs/EggColors_24Bit.jpg', function ( image ) {
 					texture.image = image;
-					//texture.needsUpdate = true;
+					texture.needsUpdate = true;
 				} );
 				
 				var loader = new THREE.OBJLoader( manager );
-				loader.setPath('Objs/');
-				loader.load( 'EggCombined.obj', function ( object ) {
+				loader.load( 'Objs/EggCombined.obj', function ( object ) {
 					object.traverse( function ( child ) {
 						if ( child instanceof THREE.Mesh ) {
 							child.material.map = texture;
 						}
 					} );
 					//object.position.y = - 95;
-					//object.scale.x = 10;
-					//object.scale.y = 10;
-					//object.scale.z = 10;
+					object.scale.x = 10;
+					object.scale.y = 10;
+					object.scale.z = 10;
 					scene.add( object );
 				}, onProgress, onError );
 				
