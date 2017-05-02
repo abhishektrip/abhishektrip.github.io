@@ -3,19 +3,19 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.40 0.40 0.40
 Tf 1.00 1.00 1.00
-map_Kd EggColors_24Bit.jpg
+map_Kd EggColors_24Bit.bmp
 Ni 1.00
-newmtl END_eggColors
+newmtl END_eggColors2
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.40 0.40 0.40
 Tf 1.00 1.00 1.00
-map_Kd EggColors_24Bit.jpg
+map_Kd EggColors_24Bit.bmp
 Ni 1.00
-newmtl POINT_eggColors
+newmtl POINT_eggColors2
 illum 4
 Kd 0.00 0.00 0.00
 Ka 0.40 0.40 0.40
 Tf 1.00 1.00 1.00
-map_Kd EggColors_24Bit.jpg
+map_Kd EggColors_24Bit.bmp
 Ni 1.00
