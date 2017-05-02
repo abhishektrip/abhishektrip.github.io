@@ -1,6 +1,7 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
 mtllib END_Separate.mtl
+g default
 v -0.567141 0.000000 -6.443623
 v -0.187377 -0.324546 -6.464808
 v -0.187377 0.324546 -6.464808
@@ -3835,7 +3836,9 @@ vn -0.461691 -0.642758 -0.611313
 vn 0.787489 -0.078458 -0.611314
 vn 0.787489 -0.078458 -0.611314
 vn 0.787489 -0.078458 -0.611314
-usemtl END_eggColors2
+s off
+g END
+usemtl END_eggColors
 f 1/1/1 3/3/2 2/2/3
 f 4/4/4 6/6/5 5/5/6
 f 7/7/7 9/9/8 8/8/9

@@ -1,6 +1,7 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
 mtllib POINT_Separate.mtl
+g default
 v -0.186751 -0.323462 6.358570
 v -0.566204 0.000000 6.321311
 v -0.186751 0.323462 6.358570
@@ -3511,7 +3512,9 @@ vn -0.446870 -0.610831 0.653599
 vn 0.752432 -0.081585 0.653598
 vn 0.752432 -0.081585 0.653598
 vn 0.752432 -0.081585 0.653598
-usemtl POINT_eggColors2
+s off
+g POINT
+usemtl POINT_eggColors
 f 1/1/1 3/3/2 2/2/3
 f 4/4/4 6/6/5 5/5/6
 f 7/7/7 9/9/8 8/8/9
