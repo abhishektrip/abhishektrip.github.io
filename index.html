@@ -1,159 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Vegreville Egg</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<style>
-			body {
-				font-family: Monospace;
-				background-color: #000;
-				color: #fff;
-				margin: 0px;
-				overflow: hidden;
-			}
-			#info {
-				color: #fff;
-				position: absolute;
-				top: 10px;
-				width: 100%;
-				text-align: center;
-				z-index: 100;
-				display:block;
-			}
-			#info a, .button { color: #f00; font-weight: bold; text-decoration: underline; cursor: pointer }
-		</style>
-	</head>
+<html>
+<title>Abhishek Tripathi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-grey">
 
-	<body>
-		<div id="info">
-			Vegreville Egg Loader
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    
+    <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+		<div class="w3-third">
+			<div class="w3-display-container">
+			<img src="./images/profile_picture.jpg" style="width:75%" alt="Avatar">
+			</div>
 		</div>
+		<div class="w3-twothird">
+			<div class="w3-container">
+			<h2 class="w3-text-grey w3-padding-16">Abhishek Tripathi</h2>
+			<p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>abhishektrip@gmail.com</p>
+			<p>I am a Ph.D. student in the <a href="https://www.cs.utah.edu/" target="_blank">School of Computing</a> at the <a href="https://www.utah.edu/" target="_blank">University of Utah</a> , supervised by <a href = "https://www.cs.utah.edu/~ladislav/" target="_blank">Dr. Ladislav Kavan</a>.</p>
+			<p>My research interests are Physics-based animation, 3D Reconstruction, Virtual/Augmentd Reality & Machine Learning and all things visual & <a href="./vegreville_egg.html/" target="_blank">fun.</a> </p>
+			<p>I enjoy <a href="https://www.flickr.com/photos/118951444@N04/albums" target="_blank">photography</a>, traveling and watching movies in my free time. 
+			<hr>
+			</div>
+		</div>
+	</div>
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>Technical Director (Research and Development) - <a href="https://www.morph3d.com/" target="_blank">Morph 3D</a> </b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>April 2016 - <span class="w3-tag w3-teal w3-round">Present</span></h6>
+		  <p>• Research and Development in Graphics, Geometry processing, Virtual/Augmented/Mixed Reality with focus on conversion of research ideas into product features for Morph Character System (MCS).</p>
+		  <p>• VR/AR Prototype applications for commercial HMD’s -Oculus Rift, HTC Vive, MS HoloLens etc. - showcasing MCS capabilities.</p>
+			<p>• Architecture - design and software development for scalable tools for the MCS platform.</p>
+			<p>• Developed tools to allow artist to create custom content for the MCS platform. Tools allow automatic generation of morphs, overlap masks, rigging/skinning for animation, custom material creation and real-time preview of “in-game” look and feel.</p>
+		  <p><b> I have extensive experience working in the industry. Check my <a href="https://www.linkedin.com/in/abhishektrip" target="_blank">LinkedIn</a> profile for details on my previous work experiences. </b></p> 
+          <hr>
+        </div>
+      </div>
 
-		<script src="js/three.min.js"></script>
-		<script src="js/OBJLoader.js"></script>
-		<script src="js/MTLLoader.js"></script>
-		<script src="js/DDSLoader.js"></script>
-		<script src="js/OrbitControls.js"></script>
+      <div class="w3-container w3-card-2 w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>University of Utah</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2009 - 2011</h6>
+          <p>M.S. Computing - Computer Graphics & Visualization</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity"><b>B.M.S. Institute of Technology, Bangalore</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2003 - 2007</h6>
+          <p>Bachelor of Engineering - Computer Science & Engineering</p><br>
+        </div>
+      </div>
 
-		<script>
-			var container, stats;
-			var camera, scene, renderer;
-			var cameraControls;
-			var mouseX = 0, mouseY = 0;
-			var windowHalfX = window.innerWidth / 2;
-			var windowHalfY = window.innerHeight / 2;
-			init();
-			animate();
-			function init() {
-			
-				container = document.createElement( 'div' );
-				document.body.appendChild( container );
-				
-				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 8000 );
-				camera.position.z = 250;
-				
-				// scene
-				scene = new THREE.Scene();
-				var ambient = new THREE.AmbientLight( 0x333333 );
-				scene.add( ambient );
-				var directionalLight = new THREE.DirectionalLight( 0xFFFFFF, 1.0 );
-				directionalLight.position.set( 0, 0, 1 ).normalize();
-				scene.add( directionalLight );
-				
-				
-				
-				var manager = new THREE.LoadingManager();
-				manager.onProgress = function ( item, loaded, total ) {
-					console.log( item, loaded, total );
-				};
-				
-				var texture = new THREE.Texture();
-				
-				// model
-				var onProgress = function ( xhr ) {
-					if ( xhr.lengthComputable ) {
-						var percentComplete = xhr.loaded / xhr.total * 100;
-						console.log( Math.round(percentComplete, 2) + '% downloaded' );
-					}
-				};
-				var onError = function ( xhr ) { };
-																
-				var loader = new THREE.ImageLoader( manager );
-				loader.load( 'Objs/EggColors_24Bit.jpg', function ( image ) {
-					texture.image = image;
-					texture.needsUpdate = true;
-				} );
-				
-				var loader = new THREE.OBJLoader( manager );
-				loader.load( 'Objs/EggCombined.obj', function ( object ) {
-					object.traverse( function ( child ) {
-						if ( child instanceof THREE.Mesh ) {
-							child.material.map = texture;
-						}
-					} );
-					//object.position.y = - 95;
-					object.scale.x = 10;
-					object.scale.y = 10;
-					object.scale.z = 10;
-					scene.add( object );
-				}, onProgress, onError );
-				
-				/*THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
-				var mtlLoader = new THREE.MTLLoader();
-				mtlLoader.setPath( 'Objs/' );
-				mtlLoader.load( 'BARREL_Separate.mtl', function( materials ) {
-					materials.preload();
-					var objLoader = new THREE.OBJLoader();
-					objLoader.setMaterials( materials );
-					objLoader.setPath( 'Objs/' );
-					objLoader.load( 'BARREL_Separate.obj', function ( object ) {
-						//object.position.z = 50;
-						//object.scale.x = 100;
-						//object.scale.y = 100;
-						//object.scale.z = 100;
-						scene.add( object );
-					}, onProgress, onError );
-				});*/
-				//
-				renderer = new THREE.WebGLRenderer();
-				renderer.setClearColor( 0xAAAAAA );				
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				renderer.gammaInput = true;
-				renderer.gammaOutput = true;
-				container.appendChild( renderer.domElement );
-				//document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-				//
-				window.addEventListener( 'resize', onWindowResize, false );
-					// CONTROLS
-				cameraControls = new THREE.OrbitControls( camera, renderer.domElement );
-				cameraControls.target.set( 0, 0, 0 );
-				cameraControls.addEventListener( 'change', render );
-			}
-			function onWindowResize() {
-				windowHalfX = window.innerWidth / 2;
-				windowHalfY = window.innerHeight / 2;
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-				renderer.setSize( window.innerWidth, window.innerHeight );
-			}
-			function onDocumentMouseMove( event ) {
-				mouseX = ( event.clientX - windowHalfX ) / 2;
-				mouseY = ( event.clientY - windowHalfY ) / 2;
-			}
-			//
-			function animate() {
-				requestAnimationFrame( animate );
-				render();
-			}
-			function render() {
-				//camera.position.x += ( mouseX - camera.position.x ) * .05;
-				//camera.position.y += ( - mouseY - camera.position.y ) * .05;
-				//camera.lookAt( scene.position );
-				renderer.render( scene, camera );
-			}
-		</script>
+    
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
 
-	</body>
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <a href="https://www.flickr.com/photos/118951444@N04/albums" target="_blank"><i class="fa fa-flickr w3-hover-opacity"></i></a>   
+  <a href="https://www.instagram.com/abhishektrip/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+  <a href="https://twitter.com/abhishektripme" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+  <a href="https://www.linkedin.com/in/abhishektrip" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+</footer>
+
+</body>
 </html>
